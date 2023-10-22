@@ -1,5 +1,6 @@
 import { EventEmitter } from '@angular/core';
 import { Recipe } from './recipe.model';
+import { Ingredient } from '../shared/ingredient.model';
 
 export class RecipeService {
   recipeSelected = new EventEmitter<Recipe>();
@@ -7,13 +8,15 @@ export class RecipeService {
   private recipes: Recipe[] = [
     new Recipe(
       'Test Recipe',
-      'Test',
-      'https://hips.hearstapps.com/hmg-prod/images/delish-202002-pozole-0392-landscape-pf-1582315071.jpg'
+      'Test Description',
+      'https://hips.hearstapps.com/hmg-prod/images/delish-202002-pozole-0392-landscape-pf-1582315071.jpg',
+      [new Ingredient('Meat', 1), new Ingredient('French Fries', 20)]
     ),
     new Recipe(
       'Another Test Recipe',
-      'Test',
-      'https://hips.hearstapps.com/hmg-prod/images/delish-202002-pozole-0392-landscape-pf-1582315071.jpg'
+      'Test Description',
+      'https://hips.hearstapps.com/hmg-prod/images/delish-202002-pozole-0392-landscape-pf-1582315071.jpg',
+      [new Ingredient('Buns', 2), new Ingredient('Meat', 1)]
     ),
   ];
 
